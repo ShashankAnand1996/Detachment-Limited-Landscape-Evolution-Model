@@ -1,0 +1,27 @@
+This repository contains the implementation of the proposed algorithm in the manuscript below.
+
+Title of Manuscript: Linear layout of multiple flow direction networks for landscape evolution simulations
+
+Authors: Shashank Kumar Anand, Milad Hooshyar, Amilcare Porporato
+
+Corresponding Author: Amilcare Porporato (aporpora@princeton.edu)
+
+Availability of the Manuscript: http://arxiv.org/abs/1909.03176
+
+Abstract:
+We present an algorithm that is well suited to find the linear layout of the multiple flow-direction network (directed acyclic graph) for an efficient implicit computation of the erosion term in landscape evolution models. The time complexity of the algorithm varies linearly with the number of nodes in the domain, making it very efficient. The resulting numerical scheme allows us to achieve accurate steady-state solutions in conditions of high erosion rates leading to heavily dissected landscapes. We also establish that contrarily to single flow-direction methods such as D8, D$\infty$ multiple flow-direction method follows the theoretical prediction of the linear stability analysis and correctly captures the transition from smooth to the channelized regimes. We finally show that the obtained numerical solution follows the theoretical temporal variation of mean surface elevation.
+
+Run:
+The presented algorithm is compatible with the Landlab modeling environment in Python.
+
+The presented python script can be run by the command "python Code_Landscape_2019.py". Steady-state elevation profile and the flow accumulation field will be saved in the same directory after the simulation is over.
+
+Results:
+The "Results" directory contains all the steady-state solutions shown in figures of the manuscript.
+
+Numpy arrays with keyword 'acc' and 'ele' indicate the accumulation array and elevation array respectively at steady state.
+
+Numpy arrays with keyword 'diff' is the array of list with
+diff[0] - time-step
+diff[1] - maximum change in elevation at a node from previous time-step
+diff[2] - change in mean elevation from previous time-step
