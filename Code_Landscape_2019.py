@@ -99,9 +99,9 @@ def implicit_diffusion(C, dt):
     d1m1 = np.repeat(-kd, len(mg.core_nodes))
     d1m1[ncols-3:d1m1.size:ncols-2] = 0
     # Constructing the LHS (5-diagonal sparse matrix) for fixed boundary condtion in the rectangular domain)
-    A = scipy.sparse.diags([-kd, d1m1, 1 + 4*kd, d1m1, -kd], [-ncols+2, -1, 0, 1, ncols-2], shape=(len(mg.core_nodes), len(mg.core_nodes)))
+    Am = scipy.sparse.diags([-kd, d1m1, 1 + 4*kd, d1m1, -kd], [-ncols+2, -1, 0, 1, ncols-2], shape=(len(mg.core_nodes), len(mg.core_nodes)))
    
-    return scipy.sparse.linalg.lgmres(A, C, atol=0.000000000001)[0]
+    return scipy.sparse.linalg.lgmres(Am, C, atol=0.000000000001)[0]
 
 # Initializing the coefficients, domain-size and model parameters
 K_sp  = 0.000025; D = 0.005; U = 0.001; m_sp  = 1; n_sp  = 1; dx = 1.0; Nr = 101; Nc = 101
