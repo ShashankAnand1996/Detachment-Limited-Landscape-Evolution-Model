@@ -4,6 +4,7 @@ from landlab import RasterModelGrid
 from scipy import optimize
 from mpmath import *
 import numpy as np
+import scipy
 
 # Function for computing the erosion term using D_infinity flow direction method
 def DinfEroder(mg, dt, K_sp, m_sp, n_sp):
@@ -87,6 +88,21 @@ def DinfEroder(mg, dt, K_sp, m_sp, n_sp):
                 queue.append(nei)
     return ele
     
+def implicit_diffusion(C, dt):
+    '''
+    Function arguments:
+    C  :  RHS (known) column vector for the diffusion and uplift term
+    dt :                                        Time-step to be taken
+    '''
+    
+    kd   = D*dt/(dx**2)
+    d1m1 = np.repeat(-kd, len(mg.core_nodes))
+    d1m1[ncols-3:d1m1.size:ncols-2] = 0
+    # Constructing the LHS (5-diagonal sparse matrix) for fixed boundary condtion in the rectangular domain)
+    A = scipy.sparse.diags([-kd, d1m1, 1 + 4*kd, d1m1, -kd], [-ncols+2, -1, 0, 1, ncols-2], shape=(len(mg.core_nodes), len(mg.core_nodes)))
+   
+    return scipy.sparse.linalg.lgmres(A, C, atol=0.000000000001)[0]
+
 # Initializing the coefficients, domain-size and model parameters
 K_sp  = 0.000025; D = 0.005; U = 0.001; m_sp  = 1; n_sp  = 1; dx = 1.0; Nr = 101; Nc = 101
 
@@ -110,7 +126,6 @@ for edge in (mg.nodes_at_bottom_edge,mg.nodes_at_top_edge):
 
 # Selecting D_infinity as the flow direction method
 fc = FlowAccumulator(mg, flow_director = 'FlowDirectorDINF')
-fd = LinearDiffuser(mg, linear_diffusivity=D)
 fc.run_one_step()
 
 # Minimum time-steps for simulation to run
@@ -138,9 +153,8 @@ while steady_state is False:
             fc.run_one_step()
             mg.at_node['topographic__elevation'] = DinfEroder(mg, dt, K_sp, m_sp, n_sp)
             
-            # Updating elevation using the uplift and diffusion terms
-            mg.at_node['topographic__elevation'][mg.core_nodes] += U * dt
-            fd.run_one_step(dt)
+            # Updating elevation using the uplift and diffusion terms implicitly
+            mg.at_node['topographic__elevation'][mg.core_nodes] = implicit_diffusion(mg.at_node['topographic__elevation'][mg.core_nodes] + U * dt, dt)
             erode_done = True
 
         except ValueError:
