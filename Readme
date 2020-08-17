@@ -6,7 +6,7 @@ Authors: Shashank Kumar Anand, Milad Hooshyar, Amilcare Porporato
 
 Corresponding Author: Amilcare Porporato (aporpora@princeton.edu)
 
-Availability of the Manuscript: http://arxiv.org/abs/1909.03176
+Availability of the Manuscript: https://doi.org/10.1016/j.envsoft.2020.104804
 
 Abstract:
 We present an algorithm that is well suited to find the linear layout of the multiple flow-direction network (directed acyclic graph) for an efficient implicit computation of the erosion term in landscape evolution models. The time complexity of the algorithm varies linearly with the number of nodes in the domain, making it very efficient.
