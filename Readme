@@ -1,28 +1,23 @@
-This repository contains the implementation of the proposed algorithm in the manuscript below.
+# Landscape Evolution Model (LEM) Stability Analysis
+-This Python code implements an algorithm to implictly and efficiently compute the erosion term for the detachment-limited landscape evolution model (LEM).
+-The numerical results using this algorithm have been tested for accuracy based on analytical predictions in the publication referred below.
+-The resulting numerical scheme allows us to achieve accurate steady-state solutions in conditions of high erosion rates leading to heavily dissected landscapes.
 
-Title of Manuscript: Linear layout of multiple flow direction networks for landscape evolution simulations
+# Publication
+The peer-reviewed research article can be found here: https://doi.org/10.1016/j.envsoft.2020.104804.
 
-Authors: Shashank Kumar Anand, Milad Hooshyar, Amilcare Porporato
+# Installation
+- The code is presented as a jupyter notebook, which can be installed using using pip as `pip install notebook` or using Conda `conda install -c conda-forge notebook`.
+- Required python libraries are numpy and scipy libraries. 
+- The presented algorithm is compatible with the Landlab modeling environment in Python, which can be installed as .
+- The jupyter notebook 
 
-Corresponding Author: Amilcare Porporato (aporpora@princeton.edu)
 
-Availability of the Manuscript: https://doi.org/10.1016/j.envsoft.2020.104804
+#Results
 
-Abstract:
-We present an algorithm that is well suited to find the linear layout of the multiple flow-direction network (directed acyclic graph) for an efficient implicit computation of the erosion term in landscape evolution models. The time complexity of the algorithm varies linearly with the number of nodes in the domain, making it very efficient.
-The resulting numerical scheme allows us to achieve accurate steady-state solutions in conditions of high erosion rates leading to heavily dissected landscapes. We also establish that contrarily to single flow-direction methods such as D8, D∞ multiple flow-direction method follows the theoretical prediction of the linear stability analysis and correctly captures the transition from smooth to the channelized regimes. We finally show that the obtained numerical solution follows the theoretical temporal variation of mean elevation.
-
-Run:
-The presented algorithm is compatible with the Landlab modeling environment in Python.
-
-The presented python script can be run by the command "python Code_Landscape_2019.py". Steady-state elevation profile and the flow accumulation field will be saved in the same directory after the simulation is over.
-
-Results:
-The "Results" directory contains all the steady-state solutions shown in figures of the manuscript.
-
-Numpy arrays with keyword 'acc' and 'ele' indicate the accumulation array and elevation array respectively at steady state.
-
-Numpy arrays with keyword 'diff' is the array of list with
-diff[0] - time-step
-diff[1] - maximum change in elevation at a node from previous time-step
-diff[2] - change in mean elevation from previous time-step
+-The "Results" folder in this github directory contains all the steady-state solutions shown in figures of the manuscript.
+-Numpy arrays with keyword **acc** and **ele** indicate the accumulation array and elevation array respectively at steady state.
+-Numpy arrays with keyword **diff** is the array of list with
+-- diff[0] - time-step
+-- diff[1] - maximum change in elevation at a node from previous time-step
+-- diff[2] - change in mean elevation from previous time-step
