@@ -42,4 +42,4 @@ For more information about this research, you can reach out to me: [Shashank Kum
 
 # Other Links
 
-Well-commented Python code for solving the linear stability analysis problem regarding the first channel instability of the Landscape Evolution Model (LEM) by the same author is obtainable at [ShashankAnand1996/LEM_Stability_Analysis](https://github.com/ShashankAnand1996/LEM_Stability_Analysis). The pre-print of the submitted manuscript for peer-review is also available: [Inception of Regular Valley Spacing in Fluvial Landscapes](https://www.essoar.org/doi/10.1002/essoar.10511126.1).
+Well-commented Python code for solving the linear stability analysis problem regarding the first channel instability of the Landscape Evolution Model (LEM) by the same author is obtainable at [ShashankAnand1996/LEM_Stability_Analysis](https://github.com/ShashankAnand1996/LEM_Stability_Analysis). The pre-print manuscript submitted for peer-review is also available: [Inception of Regular Valley Spacing in Fluvial Landscapes](https://www.essoar.org/doi/10.1002/essoar.10511126.1).
