@@ -13,7 +13,7 @@ The peer-reviewed research article can be found here: https://doi.org/10.1016/j.
 - The jupyter notebook 
 
 
-#Results
+# Results
 
 - The "Results" folder in this github directory contains all the steady-state solutions shown in figures of the manuscript.
 - Numpy arrays with keyword **acc** and **ele** indicate the accumulation array and elevation array respectively at steady state.
