@@ -11,10 +11,11 @@ The peer-reviewed research article can be found here: https://doi.org/10.1016/j.
 # Installation
 
 - The code is presented as a *jupyter notebook*, which can be installed using pip as `pip install notebook` or using Conda `conda install -c conda-forge notebook`.
-- Required python libraries are *numpy* and *scipy* libraries, which can be installed as `pip install numpy` and `pip install scipy`, respectively. 
+- Required python libraries are *numpy* and *scipy* libraries, which can be installed using pip as `pip install numpy` and `pip install scipy`, respectively. 
 - The presented algorithm is compatible with the *landlab* modeling environment in Python, which can be installed as `pip install landlab
 ` or using Conda `conda install landlab -c conda-forge`.
 - The jupyter notebook also uses *display* module from the *ipython* library, which can be installed as `pip install ipython` or using Conda `conda install -c anaconda ipython`.
+- File **Zinitial_500_100.npy** in the repository is the elevation array used as the initial condition in the solver (the user can use other initial conditions as well).
 
 # Code structure
 
