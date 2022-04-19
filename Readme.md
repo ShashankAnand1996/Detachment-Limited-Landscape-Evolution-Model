@@ -35,6 +35,10 @@ Each number written in the list below explains the operations and functions for 
   * diff[0] - time-step.
   * diff[1] - maximum change in elevation at a node from the previous time-step.
   * diff[2] - change in mean elevation from the previous time-step.
+ 
+ # Updates
+ 
+The Python has been updated to be compatible with the recent changes in the Landlab version.
 
 # Contact Us
 
