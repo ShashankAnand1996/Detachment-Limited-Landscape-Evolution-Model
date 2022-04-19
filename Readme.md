@@ -20,11 +20,11 @@ The peer-reviewed research article can be found here: https://doi.org/10.1016/j.
 
 Each number written in the list below explains the operations and functions for the particular Cell of the Jupyter Notebook.
 1. Import relevant packages from the above-mentioned libraries.
-2. Import quadrature points and weight functions arrays (**s200.mat** and **w200.mat**), define Python functions for trial and test functions used in the weak formulation, and define Python functions to numerically obtain the slope and its derivatives for generic values of _m_ and _n_.
-3. Select values of parameters (_C<sub>I</sub>,m,n,L,U,k_), global variables and arrays used in the solver.
-4. For every Channelization Index (_C<sub>I</sub>_) and wavenumber (_k_), solve the eigen-value problem using spectral Galerkin technique with numerical quadrature.
-5. Extract the critical Channelization Index _C<sub>I<sub>cr</sub></sub>_  and the corresponding fastest growing (positive) spatial frequency (_k<sub>cr</sub>_).
-6. Save relevant arrays for plotting and further investigations.
+2. Define the Python function for computing the erosion term implicitly using the D_infinity flow direction method and also define the Python function that updates the diffusion term implicitly using the LGMRES algorithm. 
+3. Initializing the coefficients, domain-size, and model parameters to be used in the solver.
+4. Initializing the raster grid, boundary conditions, and the initial condition for the simulation run.
+5. Simulation run until the steady-state is reached.
+9. Save the elevation and drainage area arrays for plotting and further investigations.
 
 # Results
 
