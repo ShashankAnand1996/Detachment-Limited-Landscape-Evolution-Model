@@ -38,7 +38,7 @@ Each number written in the list below explains the operations and functions for 
  
  # Updates
  
-The Python has been updated to be compatible with the recent changes in the Landlab version.
+The Python code has been updated to be compatible with the recent changes in the Landlab version.
 
 # Contact Us
 
