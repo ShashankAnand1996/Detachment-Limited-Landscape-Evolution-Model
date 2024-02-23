@@ -2,7 +2,7 @@
 
 - This Python code implements an algorithm to implicitly and efficiently compute the erosion term for the detachment-limited landscape evolution model (LEM).
 - The numerical results using this algorithm have been tested for accuracy based on analytical predictions in the publication referred to below.
-- The resulting numerical scheme allows us to achieve accurate steady-state solutions in conditions of high erosion rates leading to heavily dissected landscapes.
+- The resulting numerical scheme allows us to achieve accurate steady-state solutions in high erosion rates leading to heavily dissected landscapes.
 
 # Publication
 
@@ -19,9 +19,9 @@ The peer-reviewed research article can be found here: https://doi.org/10.1016/j.
 
 # Code structure
 
-Each number written in the list below explains the operations and functions for the particular Cell of the Jupyter Notebook.
+Each number in the list below explains the operations and functions of the particular Cell of the Jupyter Notebook.
 1. Import relevant packages from the above-mentioned libraries.
-2. Define the Python function for computing the erosion term implicitly using the D_infinity flow direction method and also define the Python function that updates the diffusion term implicitly using the LGMRES algorithm. 
+2. Define the Python function for computing the erosion term implicitly using the D_infinity flow direction method and define the Python function that implicitly updates the diffusion term using the LGMRES algorithm. 
 3. Initializing the coefficients, domain size, and model parameters to be used in the solver.
 4. Initializing the raster grid, boundary conditions, and the initial condition for the simulation run.
 5. *While* loop for the simulation run until the steady-state is reached.
@@ -29,12 +29,12 @@ Each number written in the list below explains the operations and functions for 
 
 # Results
 
-* The "Results" folder in this GitHub directory contains all the steady-state solutions shown in the figures of the manuscript.
-* Numpy arrays with keywords **acc** and **ele** indicate the drainage area and elevation array respectively at the steady-state.
+* The "Results" folder in this GitHub directory contains all the steady-state solutions shown in the manuscript figures.
+* Numpy arrays with keywords **acc** and **ele** indicate the drainage area and elevation array, respectively, at the steady state.
 * Numpy arrays with keyword **diff** is the array of the list with
   * diff[0] - time-step.
-  * diff[1] - maximum change in elevation at a node from the previous time-step.
-  * diff[2] - change in mean elevation from the previous time-step.
+  * diff[1] - maximum change in elevation at a node from the previous time step.
+  * diff[2] - change in mean elevation from the previous time step.
  
  # Updates
  
@@ -42,7 +42,7 @@ The Python code has been updated to be compatible with the recent changes in the
 
 # Contact Us
 
-For more information about this research, you can reach out to me: [Shashank Kumar Anand](mailto:skanannd@princeton.edu?subject=[GitHub]%20Landscape%20Evolution%20Model%20(LEM)%20Numerical%20Solver). 
+For more information about this research, you can reach out to me: [Shashank Kumar Anand](mailto:skanannd@tamu.edu?subject=[GitHub]%20Landscape%20Evolution%20Model%20(LEM)%20Numerical%20Solver). 
 
 # Other Links
 
